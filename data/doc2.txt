@@ -1,0 +1,2 @@
+Python is a popular programming language.
+Python is used in backend development.

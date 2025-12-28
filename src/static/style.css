@@ -1,0 +1,189 @@
+/* ================= THEME ================= */
+:root {
+    --glass: rgba(255, 255, 255, 0.18);
+    --accent: #00c6ff;
+    --text: #ffffff;
+    --nav: rgba(255,255,255,0.15);
+}
+
+body.dark {
+    --glass: rgba(0, 0, 0, 0.45);
+    --accent: #90cdf4;
+    --nav: rgba(0,0,0,0.6);
+}
+
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    z-index: -2;
+}
+
+.background span {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: rgba(255,255,255,0.15);
+    animation: float 20s linear infinite;
+    border-radius: 50%;
+}
+
+.background span:nth-child(1) { left: 10%; animation-duration: 18s; }
+.background span:nth-child(2) { left: 30%; animation-duration: 25s; }
+.background span:nth-child(3) { left: 50%; animation-duration: 22s; }
+.background span:nth-child(4) { left: 70%; animation-duration: 20s; }
+.background span:nth-child(5) { left: 90%; animation-duration: 28s; }
+
+@keyframes float {
+    0% { top: 100%; transform: rotate(0deg); }
+    100% { top: -10%; transform: rotate(360deg); }
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+    background: var(--nav);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+#themeToggle {
+    border: none;
+    background: var(--accent);
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ================= APP ================= */
+.app {
+    max-width: 720px;
+    margin: 80px auto;
+    padding: 40px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    text-align: center;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= SEARCH ================= */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent);
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= RESULTS ================= */
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 14px;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.highlight {
+    background: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+/* ================= LOADER ================= */
+.loader {
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 30px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}

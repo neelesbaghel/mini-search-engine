@@ -1,0 +1,2 @@
+Data structures and algorithms are important for computer science.
+Search engines use data structures.

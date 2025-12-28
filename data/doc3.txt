@@ -1,0 +1,2 @@
+Search engines scan documents.
+Google builds large scale search systems.

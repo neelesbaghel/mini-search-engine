@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 import os
 
-from document_loader import load_documents
-from search import search   # this is your search function
+# from document_loader import load_documents
+# from search import search   
+
+from src.document_loader import load_documents
+from src.search import search
 
 app = Flask(__name__)
 

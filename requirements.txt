@@ -1,5 +1,2 @@
 flask
 gunicorn
-numpy
-scikit-learn
-nltk
